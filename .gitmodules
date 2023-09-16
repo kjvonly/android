@@ -1,0 +1,15 @@
+[submodule "submodules/kjvonly-data"]
+	path = submodules/kjvonly-data
+	url = https://git.launchpad.net/kjvonly-data.git
+[submodule "feature-bible-index/src/main/assets/kjv"]
+	path = feature-bible-index/src/main/assets/kjv
+	url = https://git.launchpad.net/kjvonly-data.git
+[submodule "submoudles/kjvonly-data"]
+	path = submoudles/kjvonly-data
+	url = https://git.launchpad.net/kjvonly-data.git
+[submodule "bible-data/src/main/assets/kjv"]
+	path = bible-data/src/main/assets/kjv
+	url = https://git.launchpad.net/bible-sqlite-prepopulate.git
+[submodule "bible-database/src/main/assets/kjv"]
+	path = bible-database/src/main/assets/kjv
+	url = https://git.launchpad.net/bible-sqlite-prepopulate.git

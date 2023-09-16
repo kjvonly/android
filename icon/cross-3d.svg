@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg5942"
+   width="277"
+   height="466"
+   viewBox="0 0 277 466"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5946">
+    <linearGradient
+       id="linearGradient34253">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.04815828;"
+         offset="0"
+         id="stop34249" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop34251" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient32010">
+      <stop
+         style="stop-color:#bb86fc;stop-opacity:1;"
+         offset="0"
+         id="stop32008" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient34253"
+       id="linearGradient34255"
+       x1="92.924118"
+       y1="337.2117"
+       x2="183.95113"
+       y2="337.2117"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.7351172,0,0,1.2429211,54.92246,-558.12207)" />
+  </defs>
+  <g
+     id="g5948">
+    <path
+       id="path35215"
+       style="fill:#bb86fc;stroke-width:1.333"
+       d="M 0.00201416,374.00064 H 277.01273 v 92.01715 H 0.00201416 Z" />
+    <path
+       id="path35210"
+       style="opacity:0.22;stroke-width:1.34373"
+       d="M -0.12400758,373.09103 H 277.4453 v 93.31696 H -0.12400758 Z" />
+    <path
+       id="path35205"
+       style="opacity:1;fill:#bb86fc;stroke-width:1.13705"
+       d="M 0.07873725,347.60336 H 276.97327 v 43.28907 H 0.07873725 Z" />
+    <path
+       id="path35200"
+       style="opacity:0.15;stroke-width:1.14188"
+       d="M -0.23045361,347.39859 H 277.43141 v 43.53613 H -0.23045361 Z" />
+    <path
+       style="fill:#bb86fc;fill-opacity:1;fill-rule:nonzero"
+       d="M 93.010149,374 92.755075,279.25 92.5,184.5 46.25,184.24001 0,183.98003 V 139.49001 95 H 46.5 93 V 47.5 0 H 138.5 184 V 47.5 95 h 46.5 46.5 v 44.49001 44.49002 l -46.25,0.25998 -46.25,0.25999 -0.25507,94.75 -0.25508,94.75 c 0,0 -90.979917,4.4e-4 -90.979701,0 z"
+       id="path5952" />
+    <path
+       id="path35195"
+       style="opacity:0.22;fill:url(#linearGradient34255);stroke-width:57.9965"
+       d="m 216.15666,-184.71748 h 157.94252 v 91.445973 H 216.15666 Z"
+       transform="matrix(-0.00111726,0.99999938,-0.99999763,-0.00217735,0,0)" />
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "kjvonly"
+include ':core-ui'
+include ':feature-ui-layout'
+include ':kjvonly'
+include ':bible-ui'
+include ':feature-ui-calendar'
+include ':bible-database'
+include ':bible-data'
+include ':bible-services'
+include ':memory-ui'
+include ':memory-services'
+include ':core-services'
+include ':memory-data'
+include ':memory-database'

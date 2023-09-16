@@ -1,0 +1,13 @@
+<resources>
+    <string name="cd_menu">Menu</string>
+    <string name="app_icon">cross</string>
+    <string name="drawer_title_bible">Bible</string>
+    <string name="drawer_title_reading_plans">Plans</string>
+    <string name="drawer_title_memory">Memory</string>
+    <string name="text_increase">increase text</string>
+    <string name="text_decrease">decrease text</string>
+    <string name="light_mode">light mode</string>
+    <string name="dark_mode">dark mode</string>
+
+
+</resources>
