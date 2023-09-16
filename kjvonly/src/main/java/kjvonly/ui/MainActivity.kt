@@ -53,7 +53,7 @@ class MainActivity(
                     val navController = rememberNavController()
                     navigationService.add("MainActivity", navController)
 
-                    NavHost(navController = navController, startDestination = Routes.Memory.route) {
+                    NavHost(navController = navController, startDestination = Routes.Bible.route) {
                         composable(Routes.Bible.route) {
                             val bibleViewModel = hiltViewModel<BibleViewModel>()
                             MainScreen(
