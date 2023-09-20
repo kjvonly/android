@@ -76,8 +76,9 @@ fun Verses(
             val v = chapter.verseMap[i]
             Text(
                 "$i $v",
-                fontSize = fontSize.sp
-            )
+                fontSize = fontSize.sp,
+                color = MaterialTheme.colors.onSurface,
+                )
         }
     }
 

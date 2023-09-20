@@ -36,7 +36,7 @@ private val _error = Color(0xffcf6679)
 private val _onPrimary = Color.Black
 private val _onSecondary = onSecondary
 private val _onBackground = Color.White
-private val _onSurface = Color.White
+private val _onSurface = Color.DarkGray
 private val _onError = Color.Black
 
 

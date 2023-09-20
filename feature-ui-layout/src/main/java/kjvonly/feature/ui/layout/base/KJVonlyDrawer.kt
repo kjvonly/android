@@ -54,9 +54,11 @@ fun KJVonlyDrawer(
     ) {
         Image(
             painter = painterResource(R.drawable.ic_cross_3d),
-         //   colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
+            //   colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
             contentDescription = stringResource(id = R.string.app_icon),
-            modifier = Modifier.padding(start = 24.dp, top = 48.dp, end = 24.dp).height(150.dp)
+            modifier = Modifier
+                .padding(start = 24.dp, top = 48.dp, end = 24.dp)
+                .height(150.dp)
         )
         Spacer(Modifier.height(24.dp))
 
@@ -83,6 +85,7 @@ fun KJVonlyDrawer(
                         modifier = Modifier
                             .padding(start = 24.dp),
                         textAlign = TextAlign.Center,
+                        color = MaterialTheme.colors.onSurface,
                     )
 
                 }
