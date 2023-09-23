@@ -60,6 +60,10 @@ class BookChapterVerseNavBarViewModel @Inject constructor(
         }
         bookNavService.subscribe(onUpdate = {
             selectedBook.value = it
+            viewModelScope.launch(Dispatchers.Main) {
+                setChapters(selectedBook.value.id)
+                setVerses(selectedBook.value.id, selectedBook.value.chapter)
+            }
         })
         bookNavService.setBook(selectedBook.value)
     }
