@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1478"
+   width="277"
+   height="466"
+   viewBox="0 0 277 466"
+   sodipodi:docname="cross-foundation-blocks-black.png"
+   inkscape:export-filename="../9970eb27/complimentary-github-cross-modified.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1482" />
+  <sodipodi:namedview
+     id="namedview1480"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="1"
+     inkscape:cx="174"
+     inkscape:cy="317.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1066"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1484">
+    <sodipodi:guide
+       position="-17.03125,90.093751"
+       orientation="1,0"
+       id="guide3209"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.6677094,89.371887"
+       orientation="0,-1"
+       id="guide3211"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="92.99559,90.769367"
+       orientation="1,0"
+       id="guide3242"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1484">
+    <path
+       style="fill:#800080"
+       d="M 92.755075,279.25 92.5,184.5 46.25,184.24001 0,183.98003 V 139.49001 95 H 46.5 93 V 47.5 0 H 138.5 184 V 47.5 95 h 46.5 46.5 v 44.49001 44.49002 L 230.75,184.24001 184.5,184.5 184.24493,279.25 183.98985,374 H 138.5 93.010149 Z"
+       id="path1959"
+       sodipodi:nodetypes="ccccccccccccccccccccccccc" />
+    <path
+       id="rect8152"
+       style="fill:#dd164f;stroke-width:83.3647"
+       d="M -0.7255398,373.73279 H 278.75859 v 92.25294 H -0.7255398 Z" />
+  </g>
+</svg>

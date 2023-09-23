@@ -26,7 +26,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import kjvonly.feature.ui.layout.R
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -53,8 +52,8 @@ fun KJVonlyDrawer(
 
     ) {
         Image(
-            painter = painterResource(R.drawable.ic_cross_3d),
-            //   colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
+            painter = painterResource(R.drawable.ic_complimentary_github_cross_primary_secondary_colors),
+           // colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
             contentDescription = stringResource(id = R.string.app_icon),
             modifier = Modifier
                 .padding(start = 24.dp, top = 48.dp, end = 24.dp)
