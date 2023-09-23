@@ -53,7 +53,8 @@ fun BibleTabBar(
                 )
                 Spacer(Modifier.width(8.dp))
                 Image(
-                    painter = painterResource(id = R.drawable.ic_cross_3d),
+                    painter = painterResource(id = R.drawable.ic_complimentary_github_cross_primary_secondary_colors),
+                    //colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
                     contentDescription = stringResource(id = R.string.app_icon),
                     modifier = Modifier.size(35.dp)
 
