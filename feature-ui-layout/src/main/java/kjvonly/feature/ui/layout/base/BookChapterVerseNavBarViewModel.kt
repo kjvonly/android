@@ -22,6 +22,7 @@ class BookChapterVerseNavBarViewModel @Inject constructor(
 
 ) : ViewModel() {
 
+    // NavService will set book on subscription. This has no effect in setting the book.
     val selectedBook = mutableStateOf(Book("Genesis", 1, 1, 1))
 
     private var bookNames: BookNames =
@@ -65,7 +66,6 @@ class BookChapterVerseNavBarViewModel @Inject constructor(
                 setVerses(selectedBook.value.id, selectedBook.value.chapter)
             }
         })
-        bookNavService.setBook(selectedBook.value)
     }
 
     fun setVerses(bookId: Int, chapterId: Int) {

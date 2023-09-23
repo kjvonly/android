@@ -24,6 +24,7 @@ class ChapterViewModel @Inject constructor(
     private val turnToService: TurnToService
 ) : ViewModel() {
 
+    // NavService will update book on subscribe. This has no effect in setting the book.
     var book = mutableStateOf(Book("John", 50, 3, 16))
     // -1 number prevents LaunchEffect from running until the chapter content is
     // available to render.
