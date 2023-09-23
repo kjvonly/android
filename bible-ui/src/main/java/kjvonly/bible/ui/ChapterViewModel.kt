@@ -24,17 +24,12 @@ class ChapterViewModel @Inject constructor(
     private val turnToService: TurnToService
 ) : ViewModel() {
 
-    var book = mutableStateOf(Book("Genesis", 1, 1, 1))
+    var book = mutableStateOf(Book("John", 50, 3, 16))
+    // -1 number prevents LaunchEffect from running until the chapter content is
+    // available to render.
     var chapter: MutableState<Chapter> = mutableStateOf<Chapter>(
-        Chapter(50, "John", HashMap(), HashMap(), HashMap())
+        Chapter(-1, "John", HashMap(), HashMap(), HashMap())
     )
-
-
-    /**
-     * toggle only allows scrollState to scroll first rendering of the composable
-     * otherwise scroll will navigate to verse after scroll up or down
-     */
-    val rendered = mutableStateOf(false)
 
     /**
      * HashMap to keep track of rendered verse row height to
@@ -47,7 +42,6 @@ class ChapterViewModel @Inject constructor(
         navService.subscribe(onUpdate = {
             book.value = it
             val path = "${book.value.id}_${book.value.chapter}"
-            rendered.value = false
             viewModelScope.launch(Dispatchers.IO) {
                 chapter.value = bibleRepository.getChapter(path)
             }
