@@ -25,6 +25,7 @@ import javax.inject.Inject
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.*
 import kjvonly.bible.data.models.Chapter
+import kjvonly.bible.data.models.ChapterPosition
 import kjvonly.bible.data.models.EmptyVerse
 import kjvonly.bible.data.models.IVerse
 import kjvonly.bible.data.models.Verse
@@ -38,8 +39,8 @@ interface BibleRepository {
     fun getChapter(path: String): Chapter
     fun getVerseRange(path: String): List<IVerse>
     fun getVerse(path: String): IVerse
-    fun setLastChapterVisited(book: Book)
-    fun getLastChapterVisited(): Book
+    fun setLastChapterVisited(cp: ChapterPosition)
+    fun getLastChapterVisited(): ChapterPosition
 
 }
 
@@ -122,8 +123,8 @@ class DefaultBibleRepository @Inject constructor(
 
         return EmptyVerse
     }
-    override fun setLastChapterVisited(book: Book) {
-        val newBook = json.encodeToString(book)
+    override fun setLastChapterVisited(cp: ChapterPosition) {
+        val newBook = json.encodeToString(cp)
         val lastBook = getLastChapterVisited()
         if (lastBook.id == -1){
             bibleDao.insertLastChapterVisited(newBook)
@@ -132,12 +133,12 @@ class DefaultBibleRepository @Inject constructor(
         }
     }
 
-    override fun getLastChapterVisited(): Book {
+    override fun getLastChapterVisited(): ChapterPosition {
         val bookJson =  bibleDao.getLastChapterVisited()
-        return if (bookJson == ""){
-            Book("NOT EXIST", -1, -1, -1)
+        return if (bookJson == "" || bookJson == null){
+            ChapterPosition(-1,-1,-1)
         } else {
-            val book = json.decodeFromString<Book>(bookJson)
+            val book = json.decodeFromString<ChapterPosition>(bookJson)
             book
         }
     }

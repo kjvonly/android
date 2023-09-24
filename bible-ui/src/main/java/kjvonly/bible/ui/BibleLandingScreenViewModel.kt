@@ -9,7 +9,10 @@ import javax.inject.Inject
 class BibleLandingScreenViewModel @Inject constructor(
     private val navService: BookNavService,
 
+
     ) : ViewModel(){
 
-
+        fun init(){
+            navService.init()
+        }
 }

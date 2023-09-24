@@ -70,6 +70,6 @@ interface BibleDao {
     fun updateLastChapterVisited(path: String)
 
     @Query("SELECT path from history where id = 0")
-    fun getLastChapterVisited():String
+    fun getLastChapterVisited():String?
 
 }

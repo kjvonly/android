@@ -7,6 +7,12 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kjvonly.bible.data.models.ChapterPosition
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -26,10 +32,11 @@ interface BookNavService {
     fun setBook(cp: ChapterPosition)
     fun subscribe(onUpdate: (b: Book) -> Unit)
     fun publish(b: Book)
+        fun init()
 }
 
 class BookNavServiceImpl @Inject constructor(
-    bibleRepository: BibleRepository,
+    private val bibleRepository: BibleRepository,
     bookNamesService: BookNamesService
     // TODO ADD in new BookHistoryService
 ) :
@@ -70,5 +77,12 @@ class BookNavServiceImpl @Inject constructor(
     override fun publish(b: Book) {
         book = b
         subs.forEach { it(b) }
+    }
+
+    override fun init() {
+        val cp = bibleRepository.getLastChapterVisited()
+        if (cp.id != -1){
+            setBook(cp)
+        }
     }
 }

@@ -25,6 +25,7 @@ import kjvonly.bible.data.DefaultBibleRepository
 import kjvonly.bible.data.models.Book
 import kjvonly.bible.data.models.BookNames
 import kjvonly.bible.data.models.Chapter
+import kjvonly.bible.data.models.ChapterPosition
 import kjvonly.bible.data.models.IVerse
 import kjvonly.bible.data.models.Verse
 import javax.inject.Inject
@@ -58,11 +59,11 @@ class FakeBibleRepository @Inject constructor() : BibleRepository {
         TODO("Not yet implemented")
     }
 
-    override fun setLastChapterVisited(book: Book) {
+    override fun setLastChapterVisited(cp: ChapterPosition) {
         TODO("Not yet implemented")
     }
 
-    override fun getLastChapterVisited(): Book {
+    override fun getLastChapterVisited(): ChapterPosition {
         TODO("Not yet implemented")
     }
 
