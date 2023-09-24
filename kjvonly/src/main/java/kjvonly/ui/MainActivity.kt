@@ -59,29 +59,29 @@ class MainActivity(
                             MainScreen(
                                 widthSize = widthSizeClass,
                                 onDateSelectionClicked = {
-                                    navController.navigate(Routes.Calendar.route)
+                                //    navController.navigate(Routes.Calendar.route)
                                 },
                                 bibleViewModel = bibleViewModel
                             )
                         }
-                        composable(Routes.Calendar.route) {
-                            val calendarViewModel = hiltViewModel<CalendarViewModel>()
-                            val parentEntry = remember(it) {
-                                navController.getBackStackEntry(Routes.Bible.route)
-                            }
-                            CalendarScreen(onBackPressed = {
-                                navController.popBackStack()
-                            }, calendarViewModel = calendarViewModel)
-                        }
-
-                        composable(Routes.Memory.route) {
-
-                            MemoryNavigation(
-                                windowWidth = widthSizeClass,
-                                navigationService = navigationService
-                            )
-
-                        }
+                        //composable(Routes.Calendar.route) {
+                        //    val calendarViewModel = hiltViewModel<CalendarViewModel>()
+                        //    val parentEntry = remember(it) {
+                        //        navController.getBackStackEntry(Routes.Bible.route)
+                        //    }
+                        //    CalendarScreen(onBackPressed = {
+                        //        navController.popBackStack()
+                        //    }, calendarViewModel = calendarViewModel)
+                        //}
+//
+                        //composable(Routes.Memory.route) {
+//
+                        //    MemoryNavigation(
+                        //        windowWidth = widthSizeClass,
+                        //        navigationService = navigationService
+                        //    )
+//
+                        //}
                     }
                 }
             }
@@ -91,7 +91,7 @@ class MainActivity(
 
 sealed class Routes(val route: String) {
     object Bible : Routes("bible")
-    object Calendar : Routes("calendar")
-    object Memory : Routes("memory")
+   //   object Calendar : Routes("calendar")
+  //  object Memory : Routes("memory")
 }
 
