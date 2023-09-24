@@ -28,12 +28,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 private const val SplashWaitTime: Long = 1000
 
 @Composable
-fun BibleLandingScreen(modifier: Modifier = Modifier, onTimeout: () -> Unit) {
+fun BibleLandingScreen(modifier: Modifier = Modifier, onTimeout: () -> Unit, viewModel: BibleLandingScreenViewModel = hiltViewModel()) {
     var showText by remember { mutableStateOf(false) }
     Box(
         modifier = modifier
@@ -46,11 +49,21 @@ fun BibleLandingScreen(modifier: Modifier = Modifier, onTimeout: () -> Unit) {
     ) {
         // Adds composition consistency. Use the value when LaunchedEffect is first called
         val currentOnTimeout by rememberUpdatedState(onTimeout)
+        val composableScope = rememberCoroutineScope()
 
         LaunchedEffect(Unit) {
-            delay(SplashWaitTime)
+            var resolving = true
+            composableScope.launch(Dispatchers.IO) {
+                viewModel.init()
+                resolving = false
+            }
+
+            while (resolving) {
+                delay(100)
+            }
             currentOnTimeout()
         }
+
         Column(Modifier) {
 
             Row(

@@ -7,6 +7,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kjvonly.bible.data.models.ChapterPosition
 
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -20,7 +21,6 @@ interface TurnToServiceModule {
         bookNavService: TurnToServiceImpl
     ): TurnToService
 }
-data class ChapterPosition(val id: Int, val chapter: Int, val verse: Int)
 
 interface TurnToService {
     fun goNext(currentPosition: ChapterPosition): ChapterPosition

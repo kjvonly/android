@@ -20,7 +20,7 @@ import androidx.navigation.NavController
 fun MainScreen(
     widthSize: WindowWidthSizeClass,
     onDateSelectionClicked: () -> Unit,
-    bibleViewModel: BibleViewModel
+    bibleViewModel: BibleViewModel,
 ) {
     Surface(
         modifier = Modifier.windowInsetsPadding(
@@ -52,7 +52,7 @@ fun MainScreen(
                     transitionState.targetState = SplashState.Completed
                     bibleViewModel.shownSplash.value = SplashState.Completed
                 }
-            )
+                )
 
             MainContent(
                 modifier = Modifier.alpha(contentAlpha),

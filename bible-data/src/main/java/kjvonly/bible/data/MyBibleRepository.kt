@@ -17,18 +17,21 @@
 package kjvonly.bible.data
 
 import android.util.Log
+import kjvonly.bible.data.models.Book
 import kjvonly.bible.data.models.BookNames
-import kjvonly.bible.data.models.*
 import kjvonly.bible.database.BibleDao
 import java.util.zip.GZIPInputStream
 import javax.inject.Inject
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.*
 import kjvonly.bible.data.models.Chapter
+import kjvonly.bible.data.models.ChapterPosition
 import kjvonly.bible.data.models.EmptyVerse
 import kjvonly.bible.data.models.IVerse
 import kjvonly.bible.data.models.Verse
 import java.text.ParseException
+
+import kotlinx.serialization.*
 
 
 interface BibleRepository {
@@ -36,12 +39,15 @@ interface BibleRepository {
     fun getChapter(path: String): Chapter
     fun getVerseRange(path: String): List<IVerse>
     fun getVerse(path: String): IVerse
+    fun setLastChapterVisited(cp: ChapterPosition)
+    fun getLastChapterVisited(): ChapterPosition
 
 }
 
 class DefaultBibleRepository @Inject constructor(
     private val bibleDao: BibleDao
 ) : BibleRepository {
+    val json = Json { encodeDefaults = true }
 
     override fun getBookNames(): BookNames {
         val b = bibleDao.getDataById("booknames.json.gz")
@@ -116,6 +122,25 @@ class DefaultBibleRepository @Inject constructor(
         }
 
         return EmptyVerse
+    }
+    override fun setLastChapterVisited(cp: ChapterPosition) {
+        val newBook = json.encodeToString(cp)
+        val lastBook = getLastChapterVisited()
+        if (lastBook.id == -1){
+            bibleDao.insertLastChapterVisited(newBook)
+        } else {
+            bibleDao.updateLastChapterVisited(newBook)
+        }
+    }
+
+    override fun getLastChapterVisited(): ChapterPosition {
+        val bookJson =  bibleDao.getLastChapterVisited()
+        return if (bookJson == "" || bookJson == null){
+            ChapterPosition(-1,-1,-1)
+        } else {
+            val book = json.decodeFromString<ChapterPosition>(bookJson)
+            book
+        }
     }
 }
 
