@@ -22,6 +22,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kjvonly.bible.data.BibleRepository
 import kjvonly.bible.data.DefaultBibleRepository
+import kjvonly.bible.data.models.Book
 import kjvonly.bible.data.models.BookNames
 import kjvonly.bible.data.models.Chapter
 import kjvonly.bible.data.models.IVerse
@@ -57,11 +58,11 @@ class FakeBibleRepository @Inject constructor() : BibleRepository {
         TODO("Not yet implemented")
     }
 
-    override fun setLastChapterVisited(path: String) {
+    override fun setLastChapterVisited(book: Book) {
         TODO("Not yet implemented")
     }
 
-    override fun getLastChapterVisited(): String {
+    override fun getLastChapterVisited(): Book {
         TODO("Not yet implemented")
     }
 

@@ -38,7 +38,7 @@ interface BibleRepository {
     fun getChapter(path: String): Chapter
     fun getVerseRange(path: String): List<IVerse>
     fun getVerse(path: String): IVerse
-    fun setLastChapterVisited(path: String)
+    fun setLastChapterVisited(book: Book)
     fun getLastChapterVisited(): Book
 
 }
@@ -122,10 +122,9 @@ class DefaultBibleRepository @Inject constructor(
 
         return EmptyVerse
     }
-
-    override fun setLastChapterVisited(book: String) {
-        var newBook = json.encodeToString(book)
-        var lastBook = getLastChapterVisited()
+    override fun setLastChapterVisited(book: Book) {
+        val newBook = json.encodeToString(book)
+        val lastBook = getLastChapterVisited()
         if (lastBook.id == -1){
             bibleDao.insertLastChapterVisited(newBook)
         } else {
@@ -134,11 +133,11 @@ class DefaultBibleRepository @Inject constructor(
     }
 
     override fun getLastChapterVisited(): Book {
-        var bookJson =  bibleDao.getLastChapterVisited()
+        val bookJson =  bibleDao.getLastChapterVisited()
         return if (bookJson == ""){
             Book("NOT EXIST", -1, -1, -1)
         } else {
-            var book = json.decodeFromString<Book>(bookJson)
+            val book = json.decodeFromString<Book>(bookJson)
             book
         }
     }

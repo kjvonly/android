@@ -29,8 +29,8 @@ interface BookNavService {
 }
 
 class BookNavServiceImpl @Inject constructor(
-    private val bibleRepository: BibleRepository,
-    private val bookNamesService: BookNamesService
+    bibleRepository: BibleRepository,
+    bookNamesService: BookNamesService
     // TODO ADD in new BookHistoryService
 ) :
 
@@ -39,7 +39,7 @@ class BookNavServiceImpl @Inject constructor(
         BookNames(HashMap(), HashMap(), HashMap(), HashMap(), HashMap())
 
 
-    private var book: Book = Book("John", 50, 3, 1);
+    private var book: Book = Book("John", 50, 3, 2);
 
 
     init {
