@@ -35,7 +35,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 private val screens = listOf(
     R.string.drawer_title_bible,
     // R.string.drawer_title_reading_plans,
-    R.string.drawer_title_memory,
+    // R.string.drawer_title_memory,
     // R.string.screen_title_my_account
 
 )
