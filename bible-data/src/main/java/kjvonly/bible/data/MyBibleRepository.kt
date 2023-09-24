@@ -17,8 +17,8 @@
 package kjvonly.bible.data
 
 import android.util.Log
+import kjvonly.bible.data.models.Book
 import kjvonly.bible.data.models.BookNames
-import kjvonly.bible.data.models.*
 import kjvonly.bible.database.BibleDao
 import java.util.zip.GZIPInputStream
 import javax.inject.Inject
@@ -30,18 +30,23 @@ import kjvonly.bible.data.models.IVerse
 import kjvonly.bible.data.models.Verse
 import java.text.ParseException
 
+import kotlinx.serialization.*
+
 
 interface BibleRepository {
     fun getBookNames(): BookNames
     fun getChapter(path: String): Chapter
     fun getVerseRange(path: String): List<IVerse>
     fun getVerse(path: String): IVerse
+    fun setLastChapterVisited(path: String)
+    fun getLastChapterVisited(): Book
 
 }
 
 class DefaultBibleRepository @Inject constructor(
     private val bibleDao: BibleDao
 ) : BibleRepository {
+    val json = Json { encodeDefaults = true }
 
     override fun getBookNames(): BookNames {
         val b = bibleDao.getDataById("booknames.json.gz")
@@ -116,6 +121,26 @@ class DefaultBibleRepository @Inject constructor(
         }
 
         return EmptyVerse
+    }
+
+    override fun setLastChapterVisited(book: String) {
+        var newBook = json.encodeToString(book)
+        var lastBook = getLastChapterVisited()
+        if (lastBook.id == -1){
+            bibleDao.insertLastChapterVisited(newBook)
+        } else {
+            bibleDao.updateLastChapterVisited(newBook)
+        }
+    }
+
+    override fun getLastChapterVisited(): Book {
+        var bookJson =  bibleDao.getLastChapterVisited()
+        return if (bookJson == ""){
+            Book("NOT EXIST", -1, -1, -1)
+        } else {
+            var book = json.decodeFromString<Book>(bookJson)
+            book
+        }
     }
 }
 

@@ -57,4 +57,12 @@ class FakeBibleRepository @Inject constructor() : BibleRepository {
         TODO("Not yet implemented")
     }
 
+    override fun setLastChapterVisited(path: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getLastChapterVisited(): String {
+        TODO("Not yet implemented")
+    }
+
 }
